@@ -23,7 +23,7 @@ else
    $insertQuery="INSERT INTO user(fullname,email,password,university,faculty,image) VALUES('$fullname','$email','$password','$university','$faculty','$image')";
 $result=mysqli_query($con,$insertQuery);
 
-if($result){
+if($insertQuery){
 
     $response['error']="200";
     $response['message']="Register successful!";
