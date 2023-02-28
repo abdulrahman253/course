@@ -4,7 +4,7 @@ require 'connection.php';
 $fullname=$_POST['fullname'];
 $email=$_POST['email'];
 $password=md5($_POST['password']);
-$university = $_POST['university'] ? $_POST['university'] : null;
+$university = $_POST['university'] !== '' ? $_POST['university'] : null;
 $faculty=$_POST['faculty'];
 $image=$_POST['image'];
 
