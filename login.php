@@ -1,19 +1,19 @@
 <?php
 
   require 'connection.php';
+  $json_data = file_get_contents("php://input");
+  $data = json_decode($json_data, true);
 
-  $email=$_POST['email'];
-  $password=md5($_POST['password']);
+  $email=$data['email'];
+  $password=md5($data['password']);
 
   $checkUser="SELECT * FROM user WHERE email='$email'";
 
   $result=mysqli_query($con,$checkUser);
 
-
-
   if(mysqli_num_rows($result)>0){ 
 
-    $checkUserquery="SELECT id, fullname, email FROM user WHERE email='$email' and password='$password'";
+    $checkUserquery="SELECT student_id, fullname, email FROM user WHERE email='$email' and password='$password'";
     $resultant=mysqli_query($con,$checkUserquery);
 
     if(mysqli_num_rows($resultant)>0){
