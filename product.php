@@ -34,7 +34,6 @@ if(mysqli_num_rows($studentResult) > 0 && mysqli_num_rows($categoryResult) > 0) 
         $selectQuery = "SELECT * FROM product WHERE product_id = '$productId'";
         $productResult = mysqli_query($con, $selectQuery);
         $product = mysqli_fetch_assoc($productResult);
-        http_response_code(201);
         echo json_encode($product);
     } else {    
         http_response_code(500);
