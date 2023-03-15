@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/abdulrahman253/course/issues"
   },
-  "homepage": "https://github.com/abdulrahman253/course#readme"
+  "homepage": "https://github.com/abdulrahman253/course#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
