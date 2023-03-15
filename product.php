@@ -13,6 +13,7 @@ $price=$data['price'];
 if($product_name ==null || $student_id==null){
     http_response_code(400);
     $response['message'] = "Some fields are missed";
+    echo json_encode($response);
     return;
 }
 
@@ -35,6 +36,8 @@ if(mysqli_num_rows($studentResult) > 0 && mysqli_num_rows($categoryResult) > 0) 
         $productResult = mysqli_query($con, $selectQuery);
         $product = mysqli_fetch_assoc($productResult);
         echo json_encode($product);
+        $response['message'] = "product added successfully";
+        echo json_encode($response);
     } else {    
         http_response_code(500);
         $response['message'] = "Failed to add the product";
