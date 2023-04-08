@@ -32,13 +32,16 @@ if(mysqli_num_rows($studentResult) > 0 && mysqli_num_rows($categoryResult) > 0) 
     if($result) {
         http_response_code(201);
         $productId = mysqli_insert_id($con);
-        $selectQuery = "SELECT * FROM product WHERE product_id = '$productId'";
+        $selectQuery = "SELECT product_id,product_name,product_name,product_image,product_desc,price FROM product WHERE product_id = '$productId'";
         $productResult = mysqli_query($con, $selectQuery);
         $product = mysqli_fetch_assoc($productResult);
-        echo json_encode($product);
+        $response['product'] = $product;
+        $response['success'] = true;
         $response['message'] = "product added successfully";
         echo json_encode($response);
-    } else {    
+    }
+    else 
+    {    
         http_response_code(500);
         $response['message'] = "Failed to add the product";
     }

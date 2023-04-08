@@ -1,17 +1,17 @@
 <?php
 
-   $hostName='database-1.cov72iohk5ci.us-east-1.rds.amazonaws.com';
-   $userName='admin';
-   $userPass='123456789';
-   $dbName='test';
+   $hostName='localhost';
+   $userName='id20462602_user';
+   $userPass='@Dd12345678910';
+   $dbName='id20462602_tab';
 
    $con=mysqli_connect($hostName,$userName,$userPass,$dbName);
 
-   /*if(!$con){
+   // if($con){
 
-   	echo "connection failed";
-   }
-   else
-   	echo "connection succes";*/
+   // 	echo "connection failed";
+   // }
+   // else
+   // 	echo "connection succes";
 
 ?>
